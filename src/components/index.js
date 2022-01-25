@@ -29,9 +29,10 @@ export const EntranceComp = (props) => {
         height: "auto",
         gap: "1rem",
         width: "250px",
-        background: "yellow",
+        background: "yellowgreen",
         display: "flex",
         flexDirection: "column",
+        padding: "1rem",
       }}
       className=""
     >
@@ -39,14 +40,14 @@ export const EntranceComp = (props) => {
       <span>y- {top}</span> */}
       <div style={{ fontSize: "22px", fontWeight: "bolder" }}>{name}</div>
       {/* <div>Vehicle Size : {size}</div> */}
-      <div>
+      <div style={{ display: "flex", gap: "1rem" }}>
         <button onClick={handleSmall}>Small</button>
         <button onClick={handleMedium}>Medium</button>
         <button onClick={handleLarge}>Large</button>
       </div>
-      <button type="button" onClick={handleSubmit}>
+      {/* <button type="button" onClick={handleSubmit}>
         SUBMIT
-      </button>
+      </button> */}
     </form>
   );
 };
