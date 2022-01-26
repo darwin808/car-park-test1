@@ -130,7 +130,7 @@ export default function Home() {
               position: "absolute",
               top: `${e.location.y * 10}rem`,
               left: `${e.location.x * 10}rem`,
-              height: "100px",
+              height: "150px",
               width: "150px",
               background: "white",
               display: "flex",
@@ -142,6 +142,7 @@ export default function Home() {
             {e.timeIn && (
               <span style={{ fontSize: "10px" }}>Time In : {timeIn}</span>
             )}
+            {!e.available && <h3>Occupied</h3>}
             {e.timeIn && (
               <button type="button" onClick={() => handleExitNow(e)}>
                 EXIT NOW!
