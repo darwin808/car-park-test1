@@ -102,11 +102,11 @@ export default function Home() {
     const initalBill = 40;
     const duration = Math.floor((Date.now() - vehicle.timeIn) / 1000);
     const newDuration = (duration) => {
-      if (duration >= 3) {
+      if (duration <= 3) return 0;
+      if (duration > 3 && duration < 24)
         return (duration - 3) * helper.checkVehicleSize(vehicle.size);
-      } else {
-        return 0;
-      }
+      if (duration >= 24) return 4960;
+      return 0;
     };
     const bill = initalBill + newDuration(duration);
     alert(`Bill : ${bill} pesos , Duration: ${duration} hours`);
